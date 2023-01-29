@@ -7,16 +7,11 @@
 -7 -> 49
 */
 
-Console.WriteLine("Введите первое число");
+Console.WriteLine("Введите число:");
 string numberStr = Console.ReadLine();
-int a = Convert.ToInt32(numberStr); 
+int number = Convert.ToInt32(numberStr); 
 
-Console.WriteLine("Введите второе число");
-string numberStr = Console.ReadLine();
-int b = Convert.ToInt32(numberStr); 
-
-int c = 
-
+int result = number * number;
 
 Console.WriteLine($"квадрат числа {number} = {result}");
 Console.WriteLine("квадрат числа " + number + " = " + result);
