@@ -6,37 +6,15 @@
 
 9012 -> 12*/
 
-int GetNumber(string message)
+
+
+Console.WriteLine("Введите любое число");
+int namber = Convert.ToInt32(Console.ReadLine());
+int sum = 0;
+while (namber > 0)
 {
-    int result = 0;
-
-    while (true)
-    {
-        Console.WriteLine(message);
-
-        if (int.TryParse(Console.ReadLine(), out result) && result >= 1)
-        {
-            break;
-        }
-        else
-        {
-            Console.WriteLine("Ввели не число. Повторите ввод");
-        }
-    }
-    return result;
+    int a = namber % 10;
+    namber = namber / 10;
+    sum = sum + a;
 }
-
-
-int MultipleNumers(int number)
-{
-    int multi = 1;
-    for (int i = 1; i <= number; i++)
-    {
-        multi = multi + i;
-    }
-    return multi;
-}
-
-int number = GetNumber("Введите число: ");
-int rezult = MultipleNumers(number);
-Console.WriteLine(rezult);
+Console.WriteLine("сумма цифр в числе равна: " + sum);

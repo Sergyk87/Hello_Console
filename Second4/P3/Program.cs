@@ -4,31 +4,31 @@
 
 int GetNumber(string message)
 {
-int result = 0;
+    int result = 0;
 
-while (true)
-{
-Console.WriteLine(message);
+    while (true)
+    {
+        Console.WriteLine(message);
 
-if (int.TryParse(Console.ReadLine(), out result) && result >= 1)
+        if (int.TryParse(Console.ReadLine(), out result) && result >= 1)
+        {
+            break;
+        }
+        else
+        {
+            Console.WriteLine("Ввели не число. Повторите ввод");
+        }
+    }
+    return result;
+}
+int MultipleNumers(int number)
 {
-break;
-}
-else
-{
-Console.WriteLine("Ввели не число. Повторите ввод");
-}
-}
-return result;
-}
-int MultipleNumers (int number)
-{
-int multi = 1;
-for (int i = 1; i <= number; i++)
-{
-multi = multi * i;
-}
-return multi;
+    int multi = 1;
+    for (int i = 1; i <= number; i++)
+    {
+        multi = multi * i;
+    }
+    return multi;
 }
 
 int number = GetNumber("Введите число: ");
