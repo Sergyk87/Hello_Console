@@ -14,7 +14,7 @@ int GetNumber(string message)
     {
         Console.WriteLine(message);
 
-        if (int.TryParse(Console.ReadLine(), out result))
+        if (int.TryParse(Console.ReadLine(), out result) && result >= 1)
         {
             break;
         }
@@ -23,11 +23,20 @@ int GetNumber(string message)
             Console.WriteLine("Ввели не число. Повторите ввод");
         }
     }
-
-    return Math.Abs(result);
+    return result;
 }
 
 
+int MultipleNumers(int number)
+{
+    int multi = 1;
+    for (int i = 1; i <= number; i++)
+    {
+        multi = multi + i;
+    }
+    return multi;
+}
 
 int number = GetNumber("Введите число: ");
-
+int rezult = MultipleNumers(number);
+Console.WriteLine(rezult);
