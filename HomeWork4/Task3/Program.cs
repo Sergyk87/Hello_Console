@@ -14,7 +14,6 @@ int[] CreateArray()
     }
     return Array;
 }
-int[] a = CreateArray();
 
 void PrintArray(int[] array)
 {
@@ -23,4 +22,5 @@ void PrintArray(int[] array)
         Console.Write($" {array[i]} ");
     }
 }
-PrintArray(a);
+int[] arr = CreateArray();
+PrintArray(arr);

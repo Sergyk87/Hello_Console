@@ -9,12 +9,20 @@
 
 
 Console.WriteLine("Введите любое число");
-int namber = Convert.ToInt32(Console.ReadLine());
-int sum = 0;
-while (namber > 0)
+int number = Convert.ToInt32(Console.ReadLine());
+if (Math.Abs(number) < 10)
 {
-    int a = namber % 10;
-    namber = namber / 10;
-    sum = sum + a;
+    Console.WriteLine("Ввели число состоящее из одного элемента, сумму посчитаь невозможно");
 }
-Console.WriteLine("сумма цифр в числе равна: " + sum);
+else
+{
+    int sum = 0;
+    while (number > 0)
+    {
+        int a = number % 10;
+        number = number / 10;
+        sum = sum + a;
+    }
+
+    Console.WriteLine("сумма цифр в числе равна: " + sum);
+}
