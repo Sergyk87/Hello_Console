@@ -38,7 +38,7 @@ double[,] InitMatrix(int rows, int columns)
     {
         for (int j = 0; j < columns; j++)
         {
-            matrix[i, j] = rnd.Next(1, 10);
+            matrix[i, j] = rnd.NextDouble();//rnd.Next();
         }
     }
 
@@ -60,6 +60,7 @@ void PrintMatrix(double[,] matrix)
 
 int countOfRows = GetNumber("Введите кол-во строк:");
 int countOfColumns = GetNumber("Введите кол-во столбцов:");
+Console.WriteLine();
 double[,] matrix = InitMatrix(countOfRows, countOfColumns);
 
 PrintMatrix(matrix);
