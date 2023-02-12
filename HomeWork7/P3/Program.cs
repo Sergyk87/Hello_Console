@@ -28,7 +28,7 @@ void PrintMatrix(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j]} ");
+            Console.Write($"{matrix[i, j]}    ");
         }
 
         Console.WriteLine();
@@ -39,12 +39,14 @@ int[,] matrix = InitMatrix(3, 4);
 
 PrintMatrix(matrix);
 
-for (int i = 0; i < matrix.GetLength(0);)
+for (int j = 0; j < matrix.GetLength(1); j++)
+{
+    double sum = 0;
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        double sum = 0;
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            sum = sum + matrix[i, j];
-        }
-        Console.WriteLine($"Среднее арифметическое каждого столбца: {sum/matrix.GetLength(1)}, ");
+        sum = sum + matrix[i, j];
     }
+
+    double average = sum / matrix.GetLength(0);
+    Console.Write($"{average:f1}  ");
+}
