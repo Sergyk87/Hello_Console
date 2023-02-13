@@ -38,7 +38,7 @@ double[,] InitMatrix(int rows, int columns)
     {
         for (int j = 0; j < columns; j++)
         {
-            matrix[i, j] = rnd.NextDouble()*10-7;
+            matrix[i, j] = rnd.NextDouble() * 10 - 5;
         }
     }
 
@@ -51,7 +51,13 @@ void PrintMatrix(double[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write("{0,6:F1}", matrix[i, j]);
+            if (matrix[i, j] > 0)
+            
+            Console.Write($" {matrix[i, j]:f1}  ");
+
+            else
+
+            Console.Write($"{matrix[i, j]:f1}  ");
         }
 
         Console.WriteLine();

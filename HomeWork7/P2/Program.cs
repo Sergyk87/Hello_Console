@@ -50,7 +50,7 @@ int rows = Convert.ToInt32(Console.ReadLine()) - 1;
 Console.WriteLine("Введите индекс столбца");
 int columns = Convert.ToInt32(Console.ReadLine()) - 1;
 
-if (rows > 0 && rows < matrix.GetLength(0) && columns > 0 && columns < matrix.GetLength(1))
+if (rows >= 0 && rows < matrix.GetLength(0) && columns >= 0 && columns < matrix.GetLength(1))
 {
     Console.WriteLine($"Число на данной позиции :{matrix[rows, columns]}");
 }
