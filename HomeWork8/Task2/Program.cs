@@ -65,25 +65,24 @@ void PrintMatrix(int[,] matrix)
 
 void SumStringMatrix(int[,] matrix)
 {
-    int minSum = 0;
+    int minSumString = 0;
     int minString = 0;
-    int sum = 0;
+    int sumString = 0;
     for (int i = 0; i < matrix.GetLength(1); i++)
     {
-        minSum = minSum + matrix[0, i];
+        minSumString += matrix[0, i];
     }
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++) sum = sum + matrix[i, j];
-        if (sum < minSum)
+        for (int j = 0; j < matrix.GetLength(1); j++) sumString += matrix[i, j];
+        if (sumString < minSumString)
         {
-            minSum = sum;
+            minSumString = sumString;
             minString = i;
         }
-        minSum = 0;
-        
+        sumString = 0;
     }
-    Console.Write($"{minString + 1}");
+    Console.Write($"Номер строки с наименьшей суммой элементов:{minString + 1}");
 }
 
 int countOfRows = GetNumber("Введите кол-во строк:");
@@ -94,4 +93,3 @@ int[,] matrix = InitMatrix(countOfRows, countOfColumns);
 PrintMatrix(matrix);
 
 SumStringMatrix(matrix);
-
