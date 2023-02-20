@@ -5,22 +5,30 @@ M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30
 */
 
-/*Задача 65: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
-M = 1; N = 5 -> "1, 2, 3, 4, 5"
-M = 4; N = 8 -> "4, 6, 7, 8"*/
+Console.Write("Введите число M: ");
+int m = Convert.ToInt32(Console.ReadLine());
 
-string SumNumberRec(int m, int n)
+Console.Write("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+SumFromMToN(m, n);
+
+// вызов функции "сумма чисел от M до N"
+void SumFromMToN(int m, int n)
 {
-			int start = m;
-			int end = n;
-			if(m > n)
-			{
-				start = n;
-				end = m;
-			}
-			return (end + start)*(end - start + 1)/2; // по формуле суммы членов арифметической прогрессии
-		}
-		
-		Console.WriteLine(SumNumberRec(72, 16));
-	}
+    Console.Write(SumMN(m - 1, n));
+}
+
+// функция сумма чисел от M до N
+int SumMN(int m, int n)
+{
+    int res = m;
+    if (m == n)
+        return 0;
+    else
+    {
+        m++;
+        res = m + SumMN(m, n);
+        return res;
+    }
 }
