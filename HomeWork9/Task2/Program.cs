@@ -9,10 +9,18 @@ M = 4; N = 8. -> 30
 M = 1; N = 5 -> "1, 2, 3, 4, 5"
 M = 4; N = 8 -> "4, 6, 7, 8"*/
 
-string NumberRec(int m, int n)
+string SumNumberRec(int m, int n)
 {
-    int sum = 0;
-    if (m < n) return sum = sum +($"{m}, " + NumberRec(m + 1, n));
-    else return;
+			int start = m;
+			int end = n;
+			if(m > n)
+			{
+				start = n;
+				end = m;
+			}
+			return (end + start)*(end - start + 1)/2; // по формуле суммы членов арифметической прогрессии
+		}
+		
+		Console.WriteLine(SumNumberRec(72, 16));
+	}
 }
-Console.WriteLine(NumberRec(4, 8), $"{sum}");
